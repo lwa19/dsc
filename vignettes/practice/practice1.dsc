@@ -5,14 +5,16 @@ DSC:
   lib_path:  functions
   exec_path: modules/simulate,
              modules/fit,
-             modules/predict,
+             # modules/predict, (not sure if it will be helpful here or just confusing)
              modules/score
   replicate: 20
   define:
     simulate: exponential
     fit:      exponential, linear, LM
-    predict:  predict_linear
+    # predict:  predict_linear
     score:    mse, mae
+    
+  # run: simulate * fit * predict * score
   run: simulate * fit * predict * score
 
 # simulate modules
